@@ -64,6 +64,7 @@
     <Compile Include="Infrastructure\IRepository.cs" />
     <Compile Include="Infrastructure\IUnitOfWork.cs" />
     <Compile Include="Infrastructure\RepositoryBase.cs" />
+    <Compile Include="Infrastructure\UnitOfWork.cs" />
     <Compile Include="Migrations\201804151032004_InitialDb.cs" />
     <Compile Include="Migrations\201804151032004_InitialDb.Designer.cs">
       <DependentUpon>201804151032004_InitialDb.cs</DependentUpon>
