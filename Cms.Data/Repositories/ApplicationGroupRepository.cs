@@ -3,7 +3,7 @@ using Cms.Model.Models;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Cms.Data.Data.Repositories
+namespace Cms.Data.Repositories
 {
     public interface IApplicationGroupRepository : IRepository<ApplicationGroup>
     {

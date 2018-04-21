@@ -7,13 +7,13 @@ namespace Cms.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class InitialDb : IMigrationMetadata
+    public sealed partial class IntialDb_Db1 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialDb));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(IntialDb_Db1));
         
         string IMigrationMetadata.Id
         {
-            get { return "201804151032004_InitialDb"; }
+            get { return "201804210208119_IntialDb_Db1"; }
         }
         
         string IMigrationMetadata.Source

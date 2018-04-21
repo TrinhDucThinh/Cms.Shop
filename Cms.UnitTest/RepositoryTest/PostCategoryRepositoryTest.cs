@@ -1,4 +1,4 @@
-﻿using Cms.Data.Data.Repositories;
+﻿using Cms.Data.Repositories;
 using Cms.Data.Infrastructure;
 using Cms.Model.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;

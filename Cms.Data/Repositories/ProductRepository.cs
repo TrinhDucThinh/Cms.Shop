@@ -5,7 +5,7 @@ using Cms.Data.Infrastructure;
 using Cms.Model.Models;
 using System.Linq;
 
-namespace Cms.Data.Data.Repositories
+namespace Cms.Data.Repositories
 { 
     public interface IProductRepository : IRepository<Product>
     {

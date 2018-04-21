@@ -1,7 +1,7 @@
 ﻿using Cms.Data.Infrastructure;
 using Cms.Model.Models;
 
-namespace Cms.Data.Data.Repositories
+namespace Cms.Data.Repositories
 {
     public interface IPostCategoryRepository : IRepository<PostCategory>
     {
