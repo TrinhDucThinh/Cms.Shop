@@ -19,6 +19,12 @@ namespace Cms.Web
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            //config.Routes.MapHttpRoute(
+            //    name: "",
+            //    routeTemplate: "api/v1/places/{category}/{region}/{area}/{page}/{count}",
+            //    defaults: new { controller = "Items", keyword = "", category = 0, region = 0, area = 0, page = 0, count = 0 }
+            //);
         }
     }
 }
