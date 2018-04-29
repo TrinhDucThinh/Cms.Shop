@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using Cms.Data.Infrastructure;
 using Cms.Data.Repositories;
 using Cms.Model.Models;
+using System.Linq;
+using System.Linq.Expressions;
+using Cms.Common;
 
 namespace Cms.Service
 {
@@ -14,11 +17,11 @@ namespace Cms.Service
 
         ProductCategory Delete(int id);
 
-        IEnumerable<ProductCategory> GetAll();
+        IQueryable<ProductCategory> GetAll();
 
-        IEnumerable<ProductCategory> GetAll(string keyword);
+        IQueryable<ProductCategory> GetAll(string keyword);
 
-        IEnumerable<ProductCategory> GetAllByParentId(int parentId);
+        IQueryable<ProductCategory> GetAllByParentId(int parentId);
 
         ProductCategory GetById(int id);
 
@@ -46,21 +49,28 @@ namespace Cms.Service
             return _ProductCategoryRepository.Delete(id);
         }
 
-        public IEnumerable<ProductCategory> GetAll()
+        public IQueryable<ProductCategory> GetAll()
         {
             return _ProductCategoryRepository.GetAll();
         }
 
-        public IEnumerable<ProductCategory> GetAll(string keyword)
+        public IQueryable<ProductCategory> GetAll(string keyword)
         {
             if (!string.IsNullOrEmpty(keyword))
-                return _ProductCategoryRepository.GetMulti(x => x.Name.Contains(keyword) || x.Description.Contains(keyword));
+                //return _ProductCategoryRepository.GetMulti(x => x.Name.Contains(keyword) || x.Description.Contains(keyword));
+                return _ProductCategoryRepository.GetAll().Where(delegate (ProductCategory c)
+                {
+                    if (StringHelper.ToUnsignString(c.Name).IndexOf(StringHelper.ToUnsignString(keyword), StringComparison.CurrentCultureIgnoreCase) >= 0)
+                        return true;
+                    else
+                        return false;
+                }).AsQueryable();
             else
                 return _ProductCategoryRepository.GetAll();
 
         }
 
-        public IEnumerable<ProductCategory> GetAllByParentId(int parentId)
+        public IQueryable<ProductCategory> GetAllByParentId(int parentId)
         {
             return _ProductCategoryRepository.GetMulti(x => x.Status && x.ParentID == parentId);
         }

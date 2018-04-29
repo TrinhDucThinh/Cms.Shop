@@ -64,6 +64,7 @@
     <Compile Include="Infrastructure\IRepository.cs" />
     <Compile Include="Infrastructure\IUnitOfWork.cs" />
     <Compile Include="Infrastructure\RepositoryBase.cs" />
+    <Compile Include="Infrastructure\SortHelper.cs" />
     <Compile Include="Infrastructure\UnitOfWork.cs" />
     <Compile Include="Migrations\201804210208119_IntialDb_Db1.cs" />
     <Compile Include="Migrations\201804210208119_IntialDb_Db1.Designer.cs">
